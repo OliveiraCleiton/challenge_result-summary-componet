@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family: "Hanken Grotesk", serif;
+}
+
+.container {
+    @extend %display-column;
+    
+    @media (min-width: 600px){
+        flex-direction: row;
+        height: 380px;
+        max-width: 550px;
+        margin: 2rem auto;
+        border-radius: 1rem;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.content {
+    width: 100%;
+    height: 50%;
+    
+    @media (min-width: 600px){
+        width: 50%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.score {
+    @extend %display-column;
+    background-image: linear-gradient(#7857ff, #2e2be9);
+    border-radius: 0 0 1rem 1rem;
+    color: #ebf1ff;
+    padding: 1rem 1rem;
+    gap: 1rem;
+    text-align: center;
+    
+    @media (min-width: 600px) {
+        border-radius: 1rem;
+    }
+    
+    &__circle {
+        @extend %display-column;
+        justify-content: center;
+        width: 6.25rem; /* 100px */
+        height: 6.25rem;
+        border-radius: 50%;
+        text-align: center;
+        background-image: linear-gradient(#4e21ca, rgba(36, 33, 202, 0));
+
+        & p:first-child {
+            font-size: 3em;
+            font-weight: 600;
+        }
+    }
+
+    &__message--result {
+        font-size: 1.5em;
+        font-weight: 500;
+    }
+
+    &__message--description {
+        font-size: .9rem;
+    }
+}
+
+
+.summary {
+
+    &__btn {
+        display: flex;
+        justify-content: space-between;
+        @extend %btn-size;
+        border-radius: 8px;
+        
+    }
+
+    &__btn--red {
+        @include color($btn-color-primary, $btn-lightness-third);
+        color: $btn-color-primary;
+    }
+
+    &__btn--red:hover {
+        @include color($btn-color-primary, $btn-lightness-second);
+    }
+
+    &__btn--yellow {
+        @include color($btn-color-secondary, $btn-lightness-fourth);
+        color: $btn-color-secondary;
+    }
+
+    &__btn--yellow:hover {
+        @include color($btn-color-secondary,$btn-lightness-third)
+    }
+
+    &__btn--green {
+        @include color($btn-color-tertiary, $btn-lightness-sixth);
+        color: $btn-color-tertiary;
+    }
+
+    &__btn--green:hover {
+        @include color($btn-color-tertiary, $btn-lightness-fifth);
+    }
+
+    &__btn--blue {
+        @include color($btn-color-quartenary, $btn-lightness-fifth);
+        color: $btn-color-quartenary;
+    }
+
+    &__btn--blue:hover {
+        @include color($btn-color-quartenary, $btn-lightness-fourth);
+    }
+
+    &__title {
+        margin: 1rem 0 0 1.5rem;
+        color: $btn-color-continue;
+        font-weight: 500;
+
+    }
+
+    &__container--img {
+        display: flex;
+        width: 50%;
+        gap: 1rem;
+    }
+
+    &__img {
+        height: auto;
+        max-width: fit-content;
+    }
+
+    &__description {
+        font-size: .9em;
+    }
+    
+    &__score {
+        color: $btn-color-continue;
+        font-weight: 500;
+    }
+
+    &__btn--continue {
+        display: block;
+        @extend %btn-size;
+        border-radius: 20px;
+        background-color: $btn-color-continue;
+        color: white;
+        border-style: none;
+    }
+
+    &__btn--continue:hover {
+        @include color($btn-color-continue, $btn-lightness-first);
+    }
+}

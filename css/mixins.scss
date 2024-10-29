@@ -1,0 +1,34 @@
+$btn-color-primary: hsl(0, 100%, 67%);
+$btn-color-secondary: hsl(39, 100%, 56%);
+$btn-color-tertiary: hsl(166, 100%, 37%);
+$btn-color-quartenary: hsl(230, 57%, 47%);
+$btn-color-continue: hsl(224, 30%, 37%);
+
+$btn-lightness-first: 10%;
+$btn-lightness-second: 20%;
+$btn-lightness-third: 30%;
+$btn-lightness-fourth: 40%;
+$btn-lightness-fifth: 50%;
+$btn-lightness-sixth: 60%;
+
+
+@mixin color($color, $luminity ) {
+    background-color: lighten($color, $luminity);
+}
+
+%display-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+%btn-size {
+    width: 92%;
+    margin: 1rem;
+    padding: .5rem;
+
+    @media (min-width: 600px){
+        width: 80%;
+        margin:1rem auto;
+    }
+}
